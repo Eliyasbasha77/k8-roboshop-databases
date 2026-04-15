@@ -131,23 +131,23 @@ spec:
       volumes:
         - name: nginx-config
           configMap:
-            name: frontend   
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend
-  namespace: roboshop
-spec:
-  type: LoadBalancer
-  selector:
-    project: roboshop
-    component: frontend
-    tier: frontend
-  ports:
-    - protocol: TCP
-      port: 80 # service port
-      targetPort: 8080 # container port
+#             name: frontend   
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: frontend
+#   namespace: roboshop
+# spec:
+#   type: LoadBalancer
+#   selector:
+#     project: roboshop
+#     component: frontend
+#     tier: frontend
+#   ports:
+#     - protocol: TCP
+#       port: 80 # service port
+#       targetPort: 8080 # container port
 ---      
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
